@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="universalfilter"
+version="1.0.0"
+displayName="Universal Chat Filter"
+authors="XEUIPR"
+description='''
+Filters console and client chat
+'''
+
+[[dependencies.universalfilter]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.universalfilter]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
