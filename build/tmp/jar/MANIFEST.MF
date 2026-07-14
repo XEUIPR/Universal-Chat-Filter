@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Specification-Title: universalfilter
-Specification-Vendor: XEUIPR
-Specification-Version: 1
-Implementation-Title: Universal Chat Filter
-Implementation-Version: 1.0.0
-Implementation-Vendor: XEUIPR
-Implementation-Timestamp: 2026-07-08T01:30:48-0500
-
