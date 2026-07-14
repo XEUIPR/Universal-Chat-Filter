@@ -18,6 +18,8 @@ public class ModConfig {
 
         FILTER_TARGET = builder
                 .comment("Where should the filters apply? Options: \"BOTH\", \"SERVER\", or \"CLIENT\"")
+                .comment("Singleplayer/connected to server: CLIENT")
+                .comment("SERVER OWNERS -- Filter Server Console: SERVER, Block console and client messages: BOTH")
                 .define("filterTarget", "BOTH");
 
         BASIC_FILTERS = builder
