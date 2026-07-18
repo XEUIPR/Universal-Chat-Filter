@@ -19,7 +19,8 @@ public class ModConfig {
         FILTER_TARGET = builder
                 .comment("Where should the filters apply? Options: \"BOTH\", \"SERVER\", or \"CLIENT\"")
                 .comment("Singleplayer/connected to server: CLIENT")
-                .comment("SERVER OWNERS -- Filter Server Console: SERVER, Block console and client messages: BOTH")
+                .comment("---SERVER OWNERS---")
+                .comment ("Filter Server Console: SERVER. Block console and client messages: BOTH")
                 .define("filterTarget", "BOTH");
 
         BASIC_FILTERS = builder
@@ -28,6 +29,7 @@ public class ModConfig {
 
         REGEX_FILTERS = builder
                 .comment("Any console/chat messages containing any of these regular expressions will be hidden. Uses Java regex syntax.")
+                .comment("Double backslashes(\\\\\\\\a instead of \\\\a) or use a literal string('' instead of \"\")")
                 .defineListAllowEmpty(List.of("regexFilters"), ArrayList::new, o -> o instanceof String);
 
         LOGGER_FILTERS = builder

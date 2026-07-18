@@ -50,16 +50,5 @@ public class ChatFilterHandler {
             }
         }
 
-
-        /* 
-        for (String msgs : msg) {
-            for (Pattern pattern : patterns) {
-                if (pattern.matcher(msgs).find()) {
-                    event.setCanceled(true);
-                    return;
-                }
-            }
-        }
-            */
     }
 }
