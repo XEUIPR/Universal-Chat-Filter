@@ -1,7 +1,5 @@
 package com.xeu.universalfilter;
 
-import java.util.ArrayList;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.LogManager;
@@ -45,20 +43,15 @@ public class ConsoleFilter {
                     }
                 }
 
-                //Compile regex before the loop
-                ArrayList<Pattern> compiled = new ArrayList<>();
-                for(String pattern : ModConfig.REGEX_FILTERS.get()){ //for each regex in config
-                    try{
-                        compiled.add(Pattern.compile(pattern));}
-                    catch(Exception e){
-                        System.err.println("Invalid regex in: " + pattern);}
-                }
-                
-                //find regex in messages
-                for(int i = 0; compiled.size() > i; i++){
-                    Matcher finder = compiled.get(i).matcher(msg);
-                    if(finder.find()){
-                        return Result.DENY;
+                //Regex
+                if(Caches.getPrecompiledCaches() == null){}
+                else{
+                    Pattern[] compiled = Caches.getPrecompiledCaches();
+
+                    for(Pattern p : compiled){
+                        if(p.matcher(msg).find()){
+                            return Result.DENY;
+                        }
                     }
                 }
 

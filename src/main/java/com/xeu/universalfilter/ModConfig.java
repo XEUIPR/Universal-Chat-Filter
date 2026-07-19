@@ -24,15 +24,18 @@ public class ModConfig {
                 .define("filterTarget", "BOTH");
 
         BASIC_FILTERS = builder
+                .comment("")
                 .comment("Any console/chat messages containing any of these strings will be hidden.")
                 .defineListAllowEmpty(List.of("basicFilters"), ArrayList::new, o -> o instanceof String);
 
         REGEX_FILTERS = builder
+                .comment("")
                 .comment("Any console/chat messages containing any of these regular expressions will be hidden. Uses Java regex syntax.")
                 .comment("Double backslashes(\\\\\\\\a instead of \\\\a) or use a literal string('' instead of \"\")")
                 .defineListAllowEmpty(List.of("regexFilters"), ArrayList::new, o -> o instanceof String);
 
         LOGGER_FILTERS = builder
+                .comment("")
                 .comment("Any console messages from loggers with a name containing any of these strings will be hidden.")
                 .defineListAllowEmpty(List.of("loggerFilters"), ArrayList::new, o -> o instanceof String);
 
